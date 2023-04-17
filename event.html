@@ -13,17 +13,25 @@ gtag("js", new Date());
 gtag("config", "G-EQQT4HKSJZ");
 document.addEventListener('DOMContentLoaded', function() {
   var myVar = document.querySelector('a');
-  myVar.addEventListener('click', function(event) { // 加入 event 參數
-    gtag("event", "clickevent", {
-      "click url": event.target.href,
-      "page url": window.location.href
+  myVar.addEventListener('click', function(event) {
+    var imgUrl = null;
+    if (event.target.querySelector('img')) {
+      imgUrl = event.target.querySelector('img').src;
+    }
+    gtag("event", "click", {
+      "clickurl": event.target.href,
+      "clicktext": event.target.textContent,
+      "clickimg": imgUrl
     });
   });
-}); 
+});
 </script>
 </head>
 <body>
 	追蹤網頁瀏覽次數
+	<a href="https://github.com/Jenshin/ga4/edit/main/event.html" target="_blank">Call to Action</a>
+	<a href="https://github.com/Jenshin/ga4" target="_blank">Call to Action</a>
+	<a href="https://guide.mycard520.com/" target="_blank">Call to Action</a>
 	<a href="https://github.com/Jenshin/ga4/edit/main/event.html" target="_blank">Call to Action</a>
 </body>
 </html>
