@@ -13,12 +13,13 @@ gtag("js", new Date());
 gtag("config", "G-EQQT4HKSJZ");
 document.addEventListener('DOMContentLoaded', function() {
   var myVar = document.querySelector('a');
-  myVar.addEventListener('click', function() {
-gtag("event", "click", {
-    "click url": event.target.href,
-    "page url": window.location.href
+  myVar.addEventListener('click', function(event) { // 加入 event 參數
+    gtag("event", "click", {
+      "click url": event.target.href,
+      "page url": window.location.href
+    });
   });
-});
+}); 
 </script>
 </head>
 <body>
