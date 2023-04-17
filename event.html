@@ -14,9 +14,10 @@ gtag("js", new Date());
 gtag("config", "G-EQQT4HKSJZ");
 </script>
 <script>
-var linkElement = document.querySelector('a'); 
-linkElement.addEventListener('click', function(event) {
-  gtag("event", "click", {
+document.addEventListener('DOMContentLoaded', function() {
+  var myVar = document.querySelector('a');
+  myVar.addEventListener('click', function() {
+gtag("event", "click", {
     "click url": event.target.href,
     "page url": window.location.href
   });
