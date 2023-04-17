@@ -14,19 +14,17 @@ gtag("js", new Date());
 gtag("config", "G-EQQT4HKSJZ");
 </script>
 <script>
-function trackCTA(){
-	// 送出事件紀錄
-	gtag("event", "分享", {
-		"platform":"Facebook",
-		"title":"如何使用 GA",
-		"value": 1
-	});
-	alert("Event Sent!");
-}
+var linkElement = document.querySelector('a'); 
+linkElement.addEventListener('click', function(event) {
+  gtag("event", "click", {
+    "click url": event.target.href,
+    "page url": window.location.href
+  });
+});
 </script>
 </head>
 <body>
 	追蹤網頁瀏覽次數
-	<button onclick="trackCTA();">Call to Action</button>
+	<a href="https://github.com/Jenshin/ga4/edit/main/event.html" target="_blank">Call to Action</a>
 </body>
 </html>
